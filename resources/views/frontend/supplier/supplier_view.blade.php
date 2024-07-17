@@ -2298,6 +2298,24 @@ $users = DB::table('users')->select('id', 'name')->get();
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const removeButtons = document.querySelectorAll('.remove-file');
+
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const fileName = this.getAttribute('data-file-name');
+                    const fileContainer = this.closest('.file-container');
+
+                    // Hide the file container
+                    if (fileContainer) {
+                        fileContainer.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script>
         VirtualSelect.init({
             ele: '#supplier-product, #ppap-elements, #supplier-services, #other-products, #manufacture-sites'
         });

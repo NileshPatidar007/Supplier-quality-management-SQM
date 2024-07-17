@@ -132,7 +132,7 @@ $users = DB::table('users')->select('id', 'name')->get();
                                     <label for="Follow Up Date">Follow Up Date</label>
                                     <div class="calenderauditee">
                                         <input type="text" id="followup_date" placeholder="DD-MM-YYYY" />
-                                        <input type="date" name="followup_date" min="{{ \Carbon\Carbon::now()->format('d-M-Y') }}" class="hide-input" oninput="handleDateInput(this, 'followup_date')" />
+                                        <input type="date" name="followup_date" max="{{ \Carbon\Carbon::now()->format('d-M-Y') }}" class="hide-input" oninput="handleDateInput(this, 'followup_date')" />
                                     </div>
                                 </div>
                             </div>

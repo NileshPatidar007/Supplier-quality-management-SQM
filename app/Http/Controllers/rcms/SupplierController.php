@@ -3666,7 +3666,8 @@ class SupplierController extends Controller
         $supplierA->originator = User::where('id', $supplierA->initiator_id)->value('name');
     //    $pre = Deviation::all();
     $old_record = SCAR::select('id', 'division_id', 'record')->get();
-        return view('frontend.scar.scar_new', compact('record_number', 'due_date', 'parent_id', 'parent_type','parent_intiation_date','parent_record','parent_initiator_id','pre','old_record','old_record'));
+    $supplierData = Supplier::select('id','supplier_name','supplier_products','distribution_sites')->get();
+        return view('frontend.scar.scar_new', compact('record_number','supplierData', 'due_date', 'parent_id', 'parent_type','parent_intiation_date','parent_record','parent_initiator_id','pre','old_record','old_record'));
     }
 
     }

@@ -178,17 +178,19 @@ $users = DB::table('users')->select('id', 'name')->get();
                                     var textlen = maxLength - $(this).val().length;
                                     $('#rchars').text(textlen);});
                             </script>
-                            <div class="col-lg-12">
+
+                            <div class="col-lg-6">
                                 <div class="group-input">
                                     <label for="Supplier.">Supplier</label>
-                                    <select name="supplier_person" id="supplier_person"> 
+                                    <input type="text" id="supplier_person" name="supplier_person" placeholder="Supplier">
+                                    <!-- <select name="supplier_person" id="supplier_person"> 
                                         <option value="">Select Supplier</option>
                                         @if(!empty($users))
                                             @foreach($users as $user)
                                                 <option value="{{$user->id }}">{{ $user->name }}</option>
                                             @endforeach
                                         @endif 
-                                    </select>
+                                    </select> -->
                                 </div>
                             </div>
 
